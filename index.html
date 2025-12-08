@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCS6JZ01LT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-NCS6JZ01LT');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JonesQuiz - Coming Soon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #007bff; /* A nice blue color */
-        }
-    </style>
+    <title>Jones Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <h1>JonesQuiz is coming soon</h1>
-        <p>We are working hard to bring you an awesome quiz experience!</p>
+
+    <!-- Language Dropdown with Logo -->
+    <div class="language-select-container">
+        <img src="favicon.ico" alt="Jones Quiz Logo" class="quiz-logo">
+        <label for="language-select">Select Language:</label>
+        <select id="language-select" class="language-select">
+            <option value="">--Choose--</option>
+            <option value="nepali">Nepali</option>
+            <option value="spanish">Spanish</option>
+        </select>
     </div>
+
+    <!-- Footer -->
+    <div class="about-section">
+        <button id="about-toggle" class="about-toggle">More ▼</button>
+        <div id="about-content" class="about-content hidden">
+            © 2025 Peter Jones Faucher. All rights reserved. This website shall solely be used for educational purposes.<br>
+            Questions or comments? Email: info@jonesquiz.com
+        </div>
+    </div>
+
+    <script>
+        // Language dropdown navigation
+        const langSelect = document.getElementById('language-select');
+        langSelect.addEventListener('change', () => {
+            if (langSelect.value) {
+                location.href = langSelect.value;
+            }
+        });
+
+        // About toggle
+        const aboutToggle = document.getElementById('about-toggle');
+        const aboutContent = document.getElementById('about-content');
+        aboutToggle.addEventListener('click', () => {
+            const isHidden = aboutContent.classList.contains('hidden');
+            aboutContent.classList.toggle('hidden');
+            aboutToggle.textContent = isHidden ? "Less ▲" : "More ▼";
+        });
+    </script>
 </body>
 </html>
