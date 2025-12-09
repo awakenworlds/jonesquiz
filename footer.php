@@ -5,4 +5,3 @@
             © 2025 Peter Jones Faucher. All rights reserved. This website shall solely be used for educational purposes.<br>
             Questions / comments? Email: info@jonesquiz.com
         </div>
-    </div>
